@@ -14,14 +14,26 @@ export const generateQuestionsAndAnswers = async (file: File): Promise<{ questio
         });
 
         if (!response.ok) {
-          throw new Error('Failed to generate Q&A');
+          const errorData = await response.json().catch(() => null);
+          console.error('API Error:', {
+            status: response.status,
+            statusText: response.statusText,
+            error: errorData
+          });
+          throw new Error(`Failed to generate Q&A: ${response.statusText}`);
         }
 
         const qaResults = await response.json();
         resolve(qaResults);
       } catch (error) {
+        console.error('Error in generateQuestionsAndAnswers:', error);
         reject(error);
       }
+    };
+
+    fileReader.onerror = (error) => {
+      console.error('FileReader error:', error);
+      reject(error);
     };
 
     fileReader.readAsText(file);
