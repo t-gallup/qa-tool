@@ -1,14 +1,1 @@
-# Research Paper Q&A Summarization Tool
-
-## Overview
-This tool helps researchers and students quickly extract key insights from research papers by generating targeted questions and answers.
-
-## Features
-- Upload research papers
-- Generate key takeaway questions
-- Provide concise answers based on paper content
-
-## Setup
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Start the application: `npm start`
+IyBSZXNlYXJjaCBQYXBlciBRJkEgU3VtbWFyaXphdGlvbiBUb29sXG5cbiMjIE92ZXJ2aWV3XG5UaGlzIHRvb2wgaGVscHMgcmVzZWFyY2hlcnMgYW5kIHN0dWRlbnRzIHF1aWNrbHkgZXh0cmFjdCBrZXkgaW5zaWdodHMgZnJvbSByZXNlYXJjaCBwYXBlcnMgYnkgZ2VuZXJhdGluZyB0YXJnZXRlZCBxdWVzdGlvbnMgYW5kIGFuc3dlcnMuXG5cbiMjIEZlYXR1cmVzXG4tIFVwbG9hZCByZXNlYXJjaCBwYXBlcnNcbi0gR2VuZXJhdGUga2V5IHRha2Vhd2F5IHF1ZXN0aW9uc1xuLSBQcm92aWRlIGNvbmNpc2UgYW5zd2VycyBiYXNlZCBvbiBwYXBlciBjb250ZW50XG5cbiMjIFNldHVwXG4xLiBDbG9uZSB0aGUgcmVwb3NpdG9yeVxuMi4gSW5zdGFsbCBkZXBlbmRlbmNpZXM6IGBucG0gaW5zdGFsbGBcbjMuIFN0YXJ0IHRoZSBhcHBsaWNhdGlvbjogYG5wbSBzdGFydGA=
