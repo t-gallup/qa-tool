@@ -1,14 +1,16 @@
 import { generateQuickSummary } from './summarizer';
-import * as pdfjs from 'pdfjs-dist';
+import * as pdfjsLib from 'pdfjs-dist';
+import { getDocument, GlobalWorkerOptions } from 'pdfjs-dist';
 
-// Initialize PDF.js worker
-if (typeof window !== 'undefined') {
-  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-}
+// Use local worker
+GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.js',
+  import.meta.url
+).toString();
 
 async function extractTextFromPDF(file: File): Promise<string> {
   const arrayBuffer = await file.arrayBuffer();
-  const pdf = await pdfjs.getDocument(arrayBuffer).promise;
+  const pdf = await getDocument(arrayBuffer).promise;
   let fullText = '';
 
   for (let i = 1; i <= pdf.numPages; i++) {
