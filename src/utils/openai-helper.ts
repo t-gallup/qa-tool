@@ -1,12 +1,11 @@
 import { generateQuickSummary } from './summarizer';
-import * as pdfjsLib from 'pdfjs-dist';
 import { getDocument, GlobalWorkerOptions } from 'pdfjs-dist';
 
-// Use local worker
-GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.js',
-  import.meta.url
-).toString();
+// Only set worker in browser environment
+if (typeof window !== 'undefined') {
+  const pdfjsWorker = require('pdfjs-dist/build/pdf.worker.entry');
+  GlobalWorkerOptions.workerSrc = pdfjsWorker;
+}
 
 async function extractTextFromPDF(file: File): Promise<string> {
   const arrayBuffer = await file.arrayBuffer();
