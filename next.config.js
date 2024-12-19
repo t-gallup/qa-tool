@@ -1,12 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config, { isServer }) => {
-    // Add loader for PDF.js worker
-    config.module.rules.push({
-      test: /pdf\.worker\.min\.js/,
-      type: 'asset/resource'
-    });
-
+  webpack: (config) => {
+    config.resolve.alias.canvas = false;
+    config.resolve.alias.encoding = false;
     return config;
   },
 };
