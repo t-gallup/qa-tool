@@ -13,10 +13,13 @@
     "dependencies": {
         "@anthropic-ai/sdk": "^0.32.1",
         "@radix-ui/react-slot": "^1.1.1",
+        "@types/pdfjs-dist": "^2.10.378",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
+        "lru-cache": "^11.0.2",
         "lucide-react": "^0.468.0",
         "next": "^15.1.0",
+        "pdfjs-dist": "^3.11.174",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-dropzone": "^14.3.5",
